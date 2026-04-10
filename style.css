@@ -503,9 +503,34 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 24px 20px;
+  padding: 24px 0 24px 20px;
   border: none;
   align-items: center;
+}
+
+/* 타임라인 카테고리 박스 (좌측) */
+.timeline-category-box {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* 타임라인 메타+콘텐츠 (중앙) - 슬래시, 연도, 제목, 설명 함께 표시 */
+.timeline-meta-year-content {
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* 타임라인 슬래시+연도 (슬래시 박스) */
+.timeline-slash-year {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: baseline;
+  flex-shrink: 0;
 }
 
 /* 타임라인 왼쪽: 이미지 (레거시 - 사용 안 함) */
@@ -516,10 +541,23 @@ ul {
 /* 타임라인 이미지 */
 .timeline-img {
   width: 220px;
-  height: 220px;
+  height: 316px;
   border-radius: 12px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+/* 포스터 이미지 - 원본 이미지 비율 유지 */
+.timeline-poster {
+  /* height: auto; */
+  object-fit: contain;
+  aspect-ratio: auto;
+}
+
+/* 아트워크 이미지 - 가로는 포스터와 동일, 높이는 원본 비율 유지 */
+.timeline-img-artwork {
+  /* height: auto; */
+  object-fit: contain;
 }
 
 /* 타임라인 오른쪽: 내용 (레거시 - 사용 안 함) */

@@ -493,12 +493,14 @@ ul {
   justify-content: center;
 }
 
-/* 타임라인 목록 전체 */
+/* 타임라인 목록 전체 (process 프레임) */
 .timeline {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  padding: 0 100px 100px 100px;
+  box-sizing: border-box;
 }
 
 /* 타임라인 각 항목 */

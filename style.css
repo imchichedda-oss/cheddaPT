@@ -557,6 +557,7 @@ ul {
   /* height: auto; */
   object-fit: contain;
   aspect-ratio: auto;
+  border-radius: 0;
 }
 
 /* 아트워크 이미지 - 가로는 포스터와 동일, 높이는 원본 비율 유지 */

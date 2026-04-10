@@ -456,15 +456,17 @@ ul {
 
 /* 기타 경력 섹션 여백 */
 .others {
-  padding: 70px 100px 150px;
   display: flex;
+  width: 1920px;
+  padding: 70px 100px 150px 100px;
   flex-direction: column;
   align-items: center;
+  gap: 70px;
 }
 
 .others .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 /* Others 컨테이너 — 최대 너비 제한 */

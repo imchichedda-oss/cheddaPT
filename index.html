@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>임채현 포트폴리오</title>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- 구글 폰트 불러오기: Pretendard, Inter, Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Manrope:wght@200&family=Noto+Sans+KR:wght@100;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- 외부 꾸밈 파일 연결 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ===================== 전체 페이지 감싸는 틀 ===================== -->
+  <div class="page-wrap">
+    <!-- ===================== 1. 히어로 영역: 대표 영상 전체 화면 ===================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- 자동 재생, 음소거, 반복 재생(loop) 설정 — 배경 영상 기본 옵션 -->
+        <video class="hero-video" src="LIM_VID.mp4" autoplay muted playsinline loop></video>
+        <!-- 이력서 보기 버튼 오버레이 -->
+        <div class="card-btns hero-btns">
+          <a href="https://drive.google.com/file/d/1ZC2h7mAg9HtZhVnQj11e7CLTNBYCpbst/view?usp=drive_link"
+            target="_blank" class="watch-btn">이력서보기</a>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== 1. 히어로 영역 끝 ===================== -->
+    <!-- ===================== 2. 소개 문구 영역 ===================== -->
+    <section class="introduce">
+      <div class="introduce-inner">
+        <p class="introduce-text">
+          <span class="introduce-line-kr">안해봤다는 이유로 안한 적은 없습니다</span>
+          <span class="introduce-line-en">IM CHAE HYUN, I'M CHALLENGER</span>
+        </p>
+      </div>
+    </section>
+    <!-- ===================== 2. 소개 문구 영역 끝 ===================== -->
+    <!-- ===================== 3. 자기소개 영역 ===================== -->
+    <section class="about">
+      <!-- 섹션 제목: 119px / Inter / weight 200 / 보라색 / 가운데 정렬 -->
+      <h2 class="about-title">About Me</h2>
+      <!-- 인적사항 / 학력 / 자격 3단 가로 나열 — space-between, 좌우 40px 패딩 -->
+      <div class="about-grid">
+        <!-- 인적사항 블록 -->
+        <div class="about-block">
+          <h3 class="about-block-title">인적사항</h3>
+          <ul class="about-list">
+            <!-- 이름: / 나이: 는 letterSpacing 넓게 (피그마 ls=11) -->
+            <li>
+              <span class="about-label ls-wide">이름:</span>
+              <span class="about-value">임채현</span>
+            </li>
+            <li>
+              <span class="about-label ls-wide">나이:</span>
+              <span class="about-value">1998.03.16</span>
+            </li>
+            <li>
+              <span class="about-label">거주지 :</span>
+              <span class="about-value">경기도 고양시 일산동구</span>
+            </li>
+            <li>
+              <span class="about-label">이메일 :</span>
+              <span class="about-value">imchichedda@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+        <!-- 학력 및 교육사항 블록 — 날짜와 내용 각각 한 행씩 -->
+        <div class="about-block">
+          <h3 class="about-block-title">학력 및 교육사항</h3>
+          <ul class="about-list">
+            <li><span class="about-label">17.03-22.02</span></li>
+            <li><span class="about-value">국제예술대학교 공연기획과 졸업</span></li>
+            <li><span class="about-label">14.02-17.02</span></li>
+            <li><span class="about-value">원미고등학교 졸업</span></li>
+          </ul>
+        </div>
+        <!-- 자격사항 블록 — 날짜와 내용 각각 한 행씩 -->
+        <div class="about-block">
+          <h3 class="about-block-title">자격사항</h3>
+          <ul class="about-list">
+            <li><span class="about-label">26.01</span></li>
+            <li><span class="about-value">GTQ(그래픽기술자격) 1급</span></li>
+            <li><span class="about-label">18.04</span></li>
+            <li><span class="about-value">1종보통운전면허</span></li>
+          </ul>
+        </div>
+      </div><!-- about-grid 끝 -->
+    </section>
+    <!-- ===================== 3. 자기소개 영역 끝 ===================== -->
+    <!-- ===================== 4. 프로젝트 영역 ===================== -->
+    <section class="projects">
+      <!-- Projects 대제목 -->
+      <h2 class="section-title">Projects</h2>
+      <!-- 4-1. 모션그래픽 소카테고리 -->
+      <div class="projects-category">
+        <div class="category-header">
+          <h3 class="category-title">생성형 AI를 활용한 모션그래픽</h3>
+          <p class="category-desc">고효율 1인 프로덕션 영상</p>
+        </div>
+        <!-- 카드 목록 — 피그마: 2열, 카드 550x540 -->
+        <div class="card-grid">
+          <!-- 카드: Spotify 광고 영상 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/Spotify 광고 영상.jpg" alt="Spotify 광고 영상" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Spotify 광고 영상</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                  <span class="tool-tag">After Effects</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">음악 스트리밍 프로그램 Spotify 광고 영상</p>
+                <span class="card-date">2026.02.03~2026.02.13</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://www.figma.com/deck/8MvLrP6TfZnDgKGEJ2PJfJ/Spotify-Redisign-%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB?node-id=1-42&p=f&viewport=-134%2C-96%2C0.62&t=GpKBXcOoPYeM2r0E-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                  target="_blank" class="storyboard-btn">스토리보드 보기</a>
+                <a href="https://drive.google.com/file/d/1hDyJDq0SqcNQ0JfQESSGqh8DBeRaQoiO/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+          <!-- 카드: 구론산 광고 영상 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/구론산 광고영상.jpg" alt="구론산 광고 영상" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">구론산 광고 영상</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                  <span class="tool-tag">After Effects</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">자양강장제 구론산 바몬드 광고 영상</p>
+                <span class="card-date">2026.01.26~2026.01.30</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://drive.google.com/file/d/1C-MolvrgGl3R-BKZ2gGdFd-Z4UEKEDJS/view?usp=drive_link"
+                  target="_blank" class="storyboard-btn">스토리보드 보기</a>
+                <a href="https://drive.google.com/file/d/1h9ajs037Pqf6t92eCscNutzGz_3E5lEk/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+          <!-- 카드: 모션그래픽 봄꽃축제 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/모션그래픽 봄꽃축제.jpg" alt="모션그래픽 봄꽃축제" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">모션그래픽 봄꽃축제</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                  <span class="tool-tag">After Effects</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">자연스럽게 작동하는 카메라와 펄럭거리며 날라오는 사진</p>
+                <span class="card-date">2026.03.20~2026.03.27</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://drive.google.com/file/d/1B925-NIjBhDMzE75VqdLa2dAcGUncle_/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+          <!-- 카드: 모션그래픽 제우스 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/모션그래픽 제우스.jpg" alt="모션그래픽 제우스" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">모션그래픽 제우스</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                  <span class="tool-tag">After Effects</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">적은 컷으로 만든 긴장감 넘치는 애니메이션</p>
+                <span class="card-date">2026.03.03~2026.03.09</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://drive.google.com/file/d/1JtDW82QNlTcoQSMmLGjY0R0BJfgCniWh/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+        </div><!-- card-grid 끝 -->
+      </div><!-- projects-category 끝 -->
+      <!-- 4-2. 쇼츠형 광고 소카테고리 -->
+      <div class="projects-category">
+        <div class="category-header">
+          <h3 class="category-title">생성형 AI를 활용한 쇼츠형 광고</h3>
+          <p class="category-desc">트렌드에 즉각적으로 반응 가능한 광고 영상</p>
+        </div>
+        <div class="card-grid">
+          <!-- 카드: 미카쿠토 광고 영상 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/미카쿠토 광고영상.jpg" alt="미카쿠토 광고 영상" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">미카쿠토 광고 영상</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">일본 유명 젤리 미카쿠토 광고 영상</p>
+                <span class="card-date">2026.02.24~2026.02.24</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://drive.google.com/file/d/1a_dz3LE1yCu_k8fYs2qhfVMVXELgllEY/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+          <!-- 카드: EVOTO 광고 영상 -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <img src="img/EVOTO 광고 영상.jpg" alt="EVOTO 광고 영상" class="card-img">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">EVOTO 광고 영상</h4>
+                <div class="card-tools">
+                  <span class="tool-tag">Premiere</span>
+                </div>
+              </div>
+              <div class="card-infobox">
+                <p class="card-desc">사진 편집 프로그램 EVOTO 광고 영상</p>
+                <span class="card-date">2026.02.10~2026.02.10</span>
+                <span class="card-percent">기여도: 100%</span>
+              </div>
+              <div class="card-btns">
+                <a href="https://drive.google.com/file/d/1rMMeOINs9PHjC0CFiGg6XfahZdETPy6C/view?usp=drive_link"
+                  target="_blank" class="watch-btn">영상 보기</a>
+              </div>
+            </div>
+          </article>
+        </div><!-- card-grid 끝 -->
+      </div><!-- projects-category 끝 -->
+    </section>
+    <!-- ===================== 4. 프로젝트 영역 끝 ===================== -->
+    <!-- ===================== 5. 기타 경력 영역 ===================== -->
+    <section class="others">
+      <!-- 섹션 제목 -->
+      <h2 class="section-title">Others</h2>
+      <!-- 타임라인 목록 -->
+      <div class="timeline">
+        <!-- 항목: 그_냥 단독 콘서트 -->
+        <div class="timeline-item">
+          <div class="timeline-category-box">
+            <span class="timeline-category">공연 기획</span>
+          </div>
+          <div class="timeline-meta-year-content">
+            <div class="timeline-slash-year">
+              <span class="timeline-slash">/</span>
+              <span class="timeline-year">2017</span>
+            </div>
+            <div class="timeline-content">
+              <p class="timeline-title">그_냥 단독 콘서트 &lt;첫눈에 반하다&gt;</p>
+              <p class="timeline-desc">홍보, 마케팅 담당<br>'다른 사람의 노래 그냥 불러줘' 이벤트 진행<br>'그냥 그리는 그_냥' 이벤트 진행<br>'다시보는 그_냥' 이벤트
+                진행</p>
+            </div>
+          </div>
+          <img src="img/그_냥 단독공연 포스터.jpg" alt="포스터" class="timeline-img timeline-poster">
+        </div>
+        <!-- 항목: 엔분의일 단독공연 -->
+        <div class="timeline-item">
+          <div class="timeline-category-box">
+            <span class="timeline-category">공연 기획</span>
+          </div>
+          <div class="timeline-meta-year-content">
+            <div class="timeline-slash-year">
+              <span class="timeline-slash">/</span>
+              <span class="timeline-year">2021</span>
+            </div>
+            <div class="timeline-content">
+              <p class="timeline-title">2021 엔분의일 단독공연 [You are June]</p>
+              <p class="timeline-desc">연출 담당<br>곡 '고래' 무대 영상 제작</p>
+            </div>
+          </div>
+          <img src="img/엔분의 일 단독공연 포스터.jpg" alt="포스터" class="timeline-img timeline-poster">
+        </div>
+        <!-- 항목: Dosii 단독공연 -->
+        <div class="timeline-item">
+          <div class="timeline-category-box">
+            <span class="timeline-category">공연 기획</span>
+          </div>
+          <div class="timeline-meta-year-content">
+            <div class="timeline-slash-year">
+              <span class="timeline-slash">/</span>
+              <span class="timeline-year">2021</span>
+            </div>
+            <div class="timeline-content">
+              <p class="timeline-title">2021 Dosii 단독공연 '樂園의 도시'</p>
+              <p class="timeline-desc">연출 담당<br>공연장 소품 설치</p>
+            </div>
+          </div>
+          <img src="img/dosii 단독공연 포스터.jpg" alt="포스터" class="timeline-img timeline-poster">
+        </div>
+        <!-- 항목: 싱글 의용군 발매 -->
+        <div class="timeline-item">
+          <div class="timeline-category-box">
+            <span class="timeline-category">음원 발매</span>
+          </div>
+          <div class="timeline-meta-year-content">
+            <div class="timeline-slash-year">
+              <span class="timeline-slash">/</span>
+              <span class="timeline-year">2023</span>
+            </div>
+            <div class="timeline-content">
+              <p class="timeline-title">싱글 '의용군' 발매</p>
+              <p class="timeline-desc">Produced by 임채현<br>Composed by 임채현<br>Arranged by 임채현<br>Lyrics by 임채현</p>
+            </div>
+          </div>
+          <img src="img/의용군 아트워크.jpg" alt="아트워크" class="timeline-img timeline-img-artwork">
+        </div>
+        <!-- 항목: 싱글 재야 발매 -->
+        <div class="timeline-item">
+          <div class="timeline-category-box">
+            <span class="timeline-category">음원 발매</span>
+          </div>
+          <div class="timeline-meta-year-content">
+            <div class="timeline-slash-year">
+              <span class="timeline-slash">/</span>
+              <span class="timeline-year">2024</span>
+            </div>
+            <div class="timeline-content">
+              <p class="timeline-title">싱글 '재야' 발매</p>
+              <p class="timeline-desc">Produced by 임채현<br>Composed by 임채현<br>Arranged by 임채현<br>Lyrics by 임채현<br>Artwork
+                by 임채현</p>
+            </div>
+          </div>
+          <img src="img/재야 아트워크.jpg" alt="아트워크" class="timeline-img timeline-img-artwork">
+        </div>
+      </div><!-- timeline 끝 -->
+    </section>
+    <!-- ===================== 5. 기타 경력 영역 끝 ===================== -->
+  </div><!-- page-wrap 끝 -->
+  <!-- ===================== 6. 꼬리말 영역 ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-text"> End of the page, start of the next.<br> 페이지의 끝에서 다음을 준비합니다. </p>
+    </div>
+  </footer>
+  <!-- ===================== 6. 꼬리말 영역 끝 ===================== -->
+
+  <!-- GSAP + SplitText: 소개 문구 두 줄을 같은 위치에서 번갈아 무한 반복 -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js"></script>
+  <script>
+    gsap.registerPlugin(SplitText);
+
+    const splitEn = SplitText.create(".introduce-line-en", { type: "chars, words" });
+    const splitKr = SplitText.create(".introduce-line-kr", { type: "chars, words" });
+
+    // 두 문장이 같은 위치에서 번갈아 등장·퇴장하며 무한 반복
+    const tl = gsap.timeline({ repeat: -1 });
+
+    tl.set(".introduce-line-en", { autoAlpha: 0 })
+      .from(splitKr.chars, {
+        y: 50,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.6,
+        ease: "back.out",
+      })
+      .to(splitKr.chars, {
+        y: -50,
+        opacity: 0,
+        stagger: 0.03,
+        duration: 0.4,
+        ease: "power2.in",
+      }, "+=1.5")
+      .set(".introduce-line-kr", { autoAlpha: 0 })
+      .set(".introduce-line-en", { autoAlpha: 1 })
+      .from(splitEn.chars, {
+        y: 50,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.6,
+        ease: "back.out",
+      })
+      .to(splitEn.chars, {
+        y: -50,
+        opacity: 0,
+        stagger: 0.03,
+        duration: 0.4,
+        ease: "power2.in",
+      }, "+=1.5")
+      .set(".introduce-line-en", { autoAlpha: 0 })
+      .set(".introduce-line-kr", { autoAlpha: 1 });
+  </script>
+</body>
+
+</html>

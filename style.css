@@ -77,11 +77,22 @@ ul {
 
 /* 히어로 안쪽 둥근 이미지 상자 */
 .hero-inner {
+  position: relative;
   border-radius: 40px;
   overflow: hidden;
   max-width: 1880px;
   margin: 0 auto;
   height: clamp(300px, 40vw, 664px);
+}
+
+/* 히어로 이력서 보기 버튼 오버레이 — 영상 위 가운데(수평) 정렬 */
+.hero-btns {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  justify-content: center;
 }
 
 /* 히어로 영상 — 상자를 꽉 채우도록 설정 */
@@ -95,15 +106,15 @@ ul {
 
 /* ===================== 2. 소개 문구 영역 ===================== */
 
-/* 소개 섹션 전체 — 피그마 1920x700, 세로 가운데 정렬 */
+/* 소개 섹션 전체 — 피그마 1920x700, 세로 가운데 정렬 (패딩 가변) */
 .introduce {
   width: 100%;
-  padding: 70px 20px;
+  padding: clamp(10px, 1.5vw, 24px) clamp(8px, 1vw, 16px);
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 700px;
+  min-height: 40vh;
 }
 
 /* 텍스트 감싸는 상자 — 내용 기준으로 가운데 정렬 */
@@ -114,17 +125,21 @@ ul {
   justify-content: center;
 }
 
-/* 소개 문구 텍스트 — 가운데 정렬, 줄바꿈 금지로 화면에 꽉 차도록 */
+/* 소개 문구 텍스트 — 가운데 정렬, 두 줄을 같은 자리에 겹쳐 교대 노출 */
 .introduce-text {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 4.95vw;
   text-align: center;
   line-height: 2.19;
   letter-spacing: -0.005em;
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
 }
 
 /* 첫 번째 줄 — 검정, weight 100, 한 줄 고정 */
 .introduce-line-kr {
+  grid-area: stack;
   display: block;
   color: #000000;
   font-weight: 100;
@@ -133,6 +148,7 @@ ul {
 
 /* 두 번째 줄 — 보라색, weight 400, 한 줄 고정 */
 .introduce-line-en {
+  grid-area: stack;
   display: block;
   color: #6b3fa0;
   font-weight: 400;
@@ -389,6 +405,19 @@ ul {
 
 /* 날짜 텍스트 — 피그마: 16px / weight 400 / #8c8c8c / 왼쪽 정렬 */
 .card-date {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8c8c8c;
+  letter-spacing: -0.08px;
+}
+
+/* 날짜 앞에 '작업기간' 레이블 자동 삽입 */
+.card-date::before {
+  content: '작업기간 ';
+}
+
+/* 콘텐츠 비율 표시 — card-date 다음 형제 요소 */
+.card-percent {
   font-size: 16px;
   font-weight: 400;
   color: #8c8c8c;

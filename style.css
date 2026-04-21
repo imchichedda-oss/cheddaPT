@@ -6,20 +6,26 @@
    배경 색상: #f2f2f2 (연회색)
 ===================================================== */
 
-
 /* ===================== 기초 설정 ===================== */
 
 /* 모든 요소의 크기 계산 방식을 통일 (테두리 포함 크기 계산) */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* 스크롤바 자리를 항상 예약해서 모달 열고 닫을 때 화면이 흔들리지 않게 함 */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* 페이지 기본 글꼴과 배경색 */
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background-color: #f2f2f2;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #e5e4e7;
   color: #212121;
   line-height: 1.6;
 }
@@ -42,9 +48,25 @@ ul {
   list-style: none;
 }
 
-
 /* ===================== 공통 너비 제한 상자 ===================== */
-
+.btn {
+  box-shadow:
+    0px 1px 1px rgba(117, 78, 164, 0.02),
+    0px 5px 4px rgba(117, 78, 164, 0.03),
+    0px 12px 9px rgba(117, 78, 164, 0.05),
+    0px 20px 15px rgba(117, 78, 164, 0.06),
+    0px 32px 24px rgba(117, 78, 164, 0.08);
+  transition: all 0.5s;
+}
+.btn:hover {
+  /* https://smoothshadows.com/#djEsMiw1LDAuMDgsMjQsMzIsMCwjNzU0ZWE0LCNmM2Y0ZjYsI2ZmZmZmZiwy */
+  box-shadow:
+    0px 1px 1px rgba(117, 78, 164, 0.08),
+    0px 5px 4px rgba(117, 78, 164, 0.06),
+    0px 12px 9px rgba(117, 78, 164, 0.05),
+    0px 20px 15px rgba(117, 78, 164, 0.03),
+    0px 32px 24px rgba(117, 78, 164, 0.02);
+}
 /* 내용이 너무 넓어지지 않도록 가운데 정렬하는 상자 */
 .section-container {
   max-width: 1200px;
@@ -52,19 +74,27 @@ ul {
   padding: 0 20px;
 }
 
-
 /* ===================== 공통 섹션 제목 ===================== */
 
 /* Projects / Others 대제목 스타일 */
-.section-title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(60px, 8vw, 119px);
-  font-weight: 200;
-  color: #754ea4;
+h2[class*="title"]:before {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background-color: #6b3fa066;
+  display: block;
+  transform-origin: 0 0;
+  transform: rotate(0deg) translate(-90px, 23px);
+}
+h2[class*="title"] {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(50px, 5vw, 50px);
+  font-weight: 500;
+  color: #473361;
   line-height: 1;
   margin-bottom: 40px;
+  letter-spacing: -0.002em;
 }
-
 
 /* ===================== 1. 히어로 영역 ===================== */
 
@@ -103,14 +133,12 @@ ul {
   object-position: center;
 }
 
-
 /* ===================== 2. 소개 문구 영역 ===================== */
 
 /* 소개 섹션 전체 — 피그마 1920x700, 세로 가운데 정렬 (패딩 가변) */
 .introduce {
   width: 100%;
   padding: clamp(10px, 1.5vw, 24px) clamp(8px, 1vw, 16px);
-  background-color: #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +155,7 @@ ul {
 
 /* 소개 문구 텍스트 — 가운데 정렬, 두 줄을 같은 자리에 겹쳐 교대 노출 */
 .introduce-text {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 4.95vw;
   text-align: center;
   line-height: 2.19;
@@ -155,7 +183,6 @@ ul {
   white-space: nowrap;
 }
 
-
 /* ===================== 3. 자기소개 영역 ===================== */
 
 /* aboutme 섹션 전체 — 피그마: 1200x633, VERTICAL, 아래 패딩 100px, 가운데 정렬 */
@@ -170,15 +197,6 @@ ul {
 }
 
 /* About Me 대제목 — 피그마: 119px / Inter / weight 200 / 보라 / 가운데 정렬 / lineHeight 296px */
-.about-title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(60px, 8vw, 119px);
-  font-weight: 200;
-  color: #754ea4;
-  text-align: center;
-  line-height: 2.49;
-  letter-spacing: -0.002em;
-}
 
 /* 3단 가로 나열 — 피그마: space-between, 좌우 40px 패딩 */
 .about-grid {
@@ -243,7 +261,6 @@ ul {
   letter-spacing: -0.1px;
 }
 
-
 /* ===================== 4. 프로젝트 영역 ===================== */
 
 /* 프로젝트 섹션 — 피그마: 1920x3412, 상70 우100 하150 좌100, gap 70, 가운데 정렬 */
@@ -295,28 +312,50 @@ ul {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 550px);
-  gap: 30px;
+  gap: 50px;
   justify-content: center;
 }
-
 
 /* ===================== 카드 스타일 ===================== */
 
 /* 카드 전체 상자 — 피그마: Large, 550x540, white, r=24, 안쪽 패딩 8px */
 .card {
+  box-sizing: border-box;
   width: 550px;
-  background-color: #ffffff;
-  border-radius: 24px;
-  padding: 8px;
+  background: #e5e4e7;
+  border-radius: 30px;
+  box-shadow:
+    7px 7px 14px #c3c2c4,
+    -7px -7px 14px #ffffff;
+  padding: 20px 20px 40px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow:
+    20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
 }
 
-/* 카드에 마우스를 올리면 살짝 위로 뜨는 효과 */
+/* 카드 hover 시 (그림자 반전) */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 30px;
+  background: #e5e4e7;
+  box-shadow:
+    -7px -7px 14px #c3c2c4,
+    7px 7px 14px #ffffff;
+}
+
+/* 타임라인 항목 hover 시 (그림자 반전) */
+.timeline-item:hover {
+  border-radius: 30px;
+  background: #e5e4e7;
+  box-shadow:
+    -7px -7px 14px #c3c2c4,
+    7px 7px 14px #ffffff;
 }
 
 /* 카드 이미지 상자 — 피그마: WrapperImage, 534x387, r=24 */
@@ -407,21 +446,28 @@ ul {
 .card-date {
   font-size: 16px;
   font-weight: 400;
-  color: #8c8c8c;
+  color: #212121;
   letter-spacing: -0.08px;
 }
 
 /* 날짜 앞에 '작업기간' 레이블 자동 삽입 */
 .card-date::before {
-  content: '작업기간 ';
+  content: "작업기간: ";
+  color: #8c8c8c;
+  letter-spacing: -0.5px;
 }
 
 /* 콘텐츠 비율 표시 — card-date 다음 형제 요소 */
 .card-percent {
   font-size: 16px;
   font-weight: 400;
-  color: #8c8c8c;
+  color: #212121;
   letter-spacing: -0.08px;
+}
+.card-percent:before {
+  content: "기여도: ";
+  letter-spacing: 3px;
+  color: #8c8c8c;
 }
 
 /* 버튼 2개 가로 배치 — 피그마: Frame 1, HORIZONTAL, gap 15px, 우측 정렬 */
@@ -480,7 +526,6 @@ ul {
   background-color: #9b74c2;
 }
 
-
 /* ===================== 5. 기타 경력 영역 ===================== */
 
 /* 기타 경력 섹션 여백 */
@@ -492,11 +537,6 @@ ul {
   align-items: center;
   gap: 70px;
   box-sizing: border-box;
-}
-
-.others .section-title {
-  text-align: center;
-  margin-bottom: 0;
 }
 
 /* Others 컨테이너 — 최대 너비 제한 */
@@ -526,8 +566,8 @@ ul {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%;
+  gap: 80px;
+  width: 80%;
   padding: 0 100px 100px 100px;
   box-sizing: border-box;
 }
@@ -537,9 +577,15 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 24px 0 24px 20px;
+  padding: 40px;
   border: none;
   align-items: flex-start;
+  border-radius: 30px;
+  background: #e5e4e7;
+  transition:box-shadow 0.5s;
+  box-shadow:
+    7px 7px 14px #c3c2c4,
+    -7px -7px 14px #ffffff;
 }
 
 /* 타임라인 카테고리 박스 (좌측) */
@@ -627,7 +673,7 @@ ul {
 
 /* 슬래시 구분자 */
 .timeline-slash {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 36px;
   font-weight: 200;
   color: #dbdbdb;
@@ -659,7 +705,6 @@ ul {
   line-height: 1.8;
 }
 
-
 /* ===================== 6. 꼬리말 영역 ===================== */
 
 /* 꼬리말 검정 배경 */
@@ -683,11 +728,44 @@ ul {
   line-height: 1.8;
 }
 
+/* ===================== 반응형: 중간 화면 (1100px 이하) ===================== */
+/* 타임라인 가로 레이아웃이 제목을 짜버리기 전에 컨테이너 폭/패딩/이미지 크기 축소 */
+
+@media (max-width: 1100px) {
+  /* Others 섹션 좌우 패딩 축소 */
+  .others {
+    padding: 60px 32px 100px;
+  }
+
+  /* 타임라인 컨테이너 — 좌우 패딩/폭 제한 해제해서 내부 공간 확보 */
+  .timeline {
+    width: 100%;
+    padding: 0 0 60px;
+    gap: 50px;
+  }
+
+  /* 타임라인 항목 — 패딩/갭 축소 */
+  .timeline-item {
+    gap: 8px;
+    padding: 24px;
+  }
+
+  /* 슬래시/연도와 제목 사이 간격 축소 */
+  .timeline-meta-year-content {
+    gap: 24px;
+  }
+
+  /* 이미지 폭 줄여 제목에 공간 양보 */
+  .timeline-img {
+    width: 160px;
+    height: auto;
+    max-height: 240px;
+  }
+}
 
 /* ===================== 반응형: 태블릿 (768px 이하) ===================== */
 
 @media (max-width: 768px) {
-
   /* 히어로 이미지 높이 줄이기 */
   .hero-inner {
     height: 280px;
@@ -736,24 +814,42 @@ ul {
     height: 260px;
   }
 
+  /* 타임라인 컨테이너 — 좁은 화면에서 전체 너비 사용, 좌우 패딩 제거 */
+  .timeline {
+    width: 100%;
+    padding: 0;
+    gap: 40px;
+  }
+
   /* 타임라인 항목 세로 정렬로 변경 */
   .timeline-item {
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
+  }
+
+  /* 슬래시/연도 박스와 제목/설명을 세로로 배치 — 콘텐츠 폭 확보 */
+  .timeline-meta-year-content {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
 
   /* 타임라인 이미지 전체 너비로 변경 */
+  .timeline-img {
+    width: 100%;
+    height: auto;
+  }
+
   .timeline-left {
     width: 100%;
     height: 200px;
   }
 }
 
-
 /* ===================== 반응형: 모바일 (480px 이하) ===================== */
 
 @media (max-width: 480px) {
-
   /* 히어로 패딩 줄이기 */
   .hero {
     padding: 12px;
@@ -774,5 +870,347 @@ ul {
   .storyboard-btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* ===================== 타임라인 상세 모달 ===================== */
+
+/* 클릭 가능 상태 표시 */
+.timeline-item {
+  cursor: pointer;
+}
+
+/* 모달 열렸을 때 본문 스크롤 잠금 */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* 모달 백드롭 — 전체 화면 덮개 */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(20, 20, 28, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+/* 모달 외곽 (Uiverse.io by LilaRest 스타일) */
+.modal {
+  --bg: #e8e8e8;
+  --contrast: #e2e0e0;
+  --grey: #93a1a1;
+  position: relative;
+  padding: 9px;
+  background-color: var(--bg);
+  border-radius: 35px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: min(820px, 100%);
+  max-width: 820px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 모달 위에 깔리는 질감 오버레이 */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+  border-radius: 35px;
+}
+
+/* 닫기 버튼 — 우측 상단 X */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-x {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.modal-close-x::before,
+.modal-close-x::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #2a2a2a;
+  border-radius: 2px;
+}
+
+.modal-close-x::before { transform: rotate(45deg); }
+.modal-close-x::after  { transform: rotate(-45deg); }
+
+.modal-close:hover .modal-close-x::before,
+.modal-close:hover .modal-close-x::after {
+  background-color: #000;
+}
+
+/* 헤딩 — 제목 + 카테고리/타이틀 알약 */
+.modal-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 24px 24px;
+  z-index: 1;
+}
+
+.modal-title {
+  margin: 0;
+  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-size: 39px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.modal-info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  background-color: #f4f3f9;
+  border-radius: 30px;
+  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-info-category { color: #7442aa; }
+.modal-info-sep      { color: #2a2a2a; }
+.modal-info-name     { color: #000000; }
+
+/* 본문 영역 */
+.modal-body {
+  position: relative;
+  z-index: 1;
+  padding: 20px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.modal-details-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 780px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 이미지 박스 (Uiverse .card-inner 색상/모서리 재사용) */
+.modal-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 30%;
+  min-height: 300px;
+  flex-shrink: 0;
+  background-color: var(--contrast);
+  border-radius: 30px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 정보 행 묶음 */
+.modal-info-rows {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+}
+
+.modal-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.modal-row-label {
+  margin: 0;
+  padding-left: 24px;
+  list-style: disc;
+  font-weight: 500;
+  color: #3d3d3d;
+  line-height: 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.modal-row-label li::marker { color: #3d3d3d; }
+
+.modal-row-colon {
+  color: #606060;
+  line-height: 28px;
+  flex-shrink: 0;
+}
+
+.modal-row-value {
+  color: #606060;
+  font-weight: 500;
+  line-height: 32px;
+  white-space: pre-wrap;
+  text-align: justify;
+  min-width: 0;
+  flex: 1;
+}
+
+/* SNS 버튼 — 검정 알약 */
+.modal-sns-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 39px;
+  background-color: #000000;
+  border-radius: 80px;
+  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-sns-btn:hover {
+  opacity: 0.85;
+}
+
+/* 반응형: 태블릿 이하 */
+@media (max-width: 768px) {
+  .modal {
+    border-radius: 28px;
+  }
+
+  .modal-overlay {
+    border-radius: 28px;
+  }
+
+  .modal-heading {
+    padding: 36px 20px 20px;
+    gap: 16px;
+  }
+
+  .modal-title {
+    font-size: 30px;
+  }
+
+  .modal-info-pill {
+    height: auto;
+    padding: 10px 20px;
+    white-space: normal;
+    text-align: center;
+    line-height: 22px;
+  }
+
+  .modal-body {
+    padding: 12px 20px 40px;
+    gap: 24px;
+  }
+
+  .modal-details-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 4px;
+  }
+
+  .modal-image-box {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 380 / 434;
+    border-radius: 24px;
+  }
+
+  .modal-info-rows {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* 반응형: 모바일 */
+@media (max-width: 480px) {
+  .modal-backdrop {
+    padding: 12px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+  }
+
+  .modal-info-pill {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .modal-info-rows {
+    font-size: 14px;
+  }
+
+  .modal-row-label {
+    padding-left: 20px;
+  }
+
+  .modal-sns-btn {
+    font-size: 16px;
+    padding: 10px 28px;
   }
 }

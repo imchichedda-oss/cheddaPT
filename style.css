@@ -1111,6 +1111,14 @@ body.modal-open {
   flex: 1;
 }
 
+/* 버튼 묶음 */
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* SNS 버튼 — 검정 알약 */
 .modal-sns-btn {
   display: inline-flex;
@@ -1130,6 +1138,28 @@ body.modal-open {
 }
 
 .modal-sns-btn:hover {
+  opacity: 0.85;
+}
+
+/* 음원 버튼 — 보라색 알약 */
+.modal-music-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 39px;
+  background-color: #805da9;
+  border-radius: 80px;
+  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-music-btn:hover {
   opacity: 0.85;
 }
 

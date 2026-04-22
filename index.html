@@ -332,7 +332,8 @@
         <!-- 항목: 싱글 의용군 발매 -->
         <div class="timeline-item" data-modal-category="음원 발매" data-modal-title="싱글 '의용군' 발매"
           data-modal-image="img/의용군 아트워크.jpg" data-modal-role="Produce / Compose / Arrange / Lyrics"
-          data-modal-detail="Produced by 임채현&#10;Composed by 임채현&#10;Arranged by 임채현&#10;Lyrics by 임채현">
+          data-modal-detail="Produced by 임채현&#10;Composed by 임채현&#10;Arranged by 임채현&#10;Lyrics by 임채현"
+          data-modal-music="https://youtu.be/F5Huww5yBEA?si=OUZBtKwZ1bhIQ1h0">
           <div class="timeline-category-box">
             <span class="timeline-category">음원 발매</span>
           </div>
@@ -417,7 +418,10 @@
             </div>
           </div>
         </div>
-        <a href="#" class="modal-sns-btn" target="_blank" rel="noopener">SNS 보기</a>
+        <div class="modal-buttons">
+          <a href="#" class="modal-sns-btn" target="_blank" rel="noopener">SNS 보기</a>
+          <a href="#" class="modal-music-btn" target="_blank" rel="noopener">음원 보기</a>
+        </div>
       </div>
     </div>
   </div>
@@ -480,6 +484,7 @@
       const roleEl = modal.querySelector('.modal-role');
       const detailEl = modal.querySelector('.modal-detail');
       const snsBtn = modal.querySelector('.modal-sns-btn');
+      const musicBtn = modal.querySelector('.modal-music-btn');
       const closeBtn = modal.querySelector('.modal-close');
 
       function openModal(item) {
@@ -489,6 +494,7 @@
         const role = item.dataset.modalRole || '';
         const detail = item.dataset.modalDetail || '';
         const sns = item.dataset.modalSns || '';
+        const music = item.dataset.modalMusic || '';
 
         categoryEl.textContent = cat;
         nameEl.textContent = title;
@@ -502,6 +508,13 @@
           snsBtn.style.display = '';
         } else {
           snsBtn.style.display = 'none';
+        }
+
+        if (music) {
+          musicBtn.href = music;
+          musicBtn.style.display = '';
+        } else {
+          musicBtn.style.display = 'none';
         }
 
         modal.classList.add('is-open');

@@ -115,11 +115,12 @@ h2[class*="title"] {
   height: clamp(300px, 40vw, 664px);
 }
 
-/* 히어로 이력서 보기 버튼 오버레이 — 영상 위 오른쪽 아래 배치 */
+/* 히어로 이력서 보기 버튼 오버레이 — 영상 위 중앙 배치 */
 .hero-btns {
   position: absolute;
-  right: 30px;
+  left: 50%;
   bottom: 30px;
+  transform: translateX(-50%);
   z-index: 2;
   justify-content: center;
 }

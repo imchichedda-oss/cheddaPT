@@ -203,8 +203,13 @@ h2[class*="title"] {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 40px 20px;
   gap: 20px;
+}
+
+.about {
+  padding-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 /* 각 블록 */
@@ -212,6 +217,12 @@ h2[class*="title"] {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding-right: 30px;
+}
+
+/* 블록 사이 세로선 구분 */
+.about-block:not(:last-child) {
+  border-right: 1px solid #d4d4d4;
 }
 
 /* 블록 소제목 — 피그마: 25px / weight 600 / #282828 / lineHeight 32.8px */
@@ -221,6 +232,9 @@ h2[class*="title"] {
   color: #282828;
   line-height: 32.8px;
   letter-spacing: -0.125px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #d4d4d4;
 }
 
 /* 항목 목록 */
@@ -235,6 +249,35 @@ h2[class*="title"] {
   display: flex;
   gap: 10px;
   align-items: baseline;
+}
+
+/* 학력 및 자격 항목은 내용 위, 날짜 아래 형태로 표시 */
+.about-block.about-education .about-list li,
+.about-block.about-certifications .about-list li {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* 항목 제목(내용) */
+.about-item-title {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #505050;
+  line-height: 28px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+/* 항목 날짜 */
+.about-item-date {
+  font-size: 16px;
+  font-weight: 400;
+  color: #787878;
+  line-height: 24px;
+  letter-spacing: -0.1px;
 }
 
 /* 레이블 — 피그마: 20px / weight 500 / #505050 */
@@ -254,7 +297,7 @@ h2[class*="title"] {
 
 /* 내용값 — 피그마: 20px / weight 400 / #787878 */
 .about-value {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: #787878;
   line-height: 24px;
